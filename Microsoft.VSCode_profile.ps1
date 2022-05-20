@@ -1,3 +1,5 @@
+#Modified version of current PS profile, but with a different OMP json config to yield a different prompt
+
 using namespace System.Management.Automation
 using namespace System.Management.Automation.Language
  
@@ -562,7 +564,7 @@ Set-PSReadLineKeyHandler -Key Alt+j `
                          -ScriptBlock {
     param($key, $arg)
 
-    $global:PSReadLineMarks.GetEnumerator() | % {
+    $global:PSReadLineMarks.GetEnumerator() | ForEach-Object {
         [PSCustomObject]@{Key = $_.Key; Dir = $_.Value} } |
         Format-Table -AutoSize | Out-Host
 
