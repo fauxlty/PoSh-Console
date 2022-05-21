@@ -690,3 +690,5 @@ Set-PSReadLineKeyHandler -Key Ctrl+Shift+t `
     [Microsoft.PowerShell.PSConsoleReadLine]::Insert("dotnet test")
     [Microsoft.PowerShell.PSConsoleReadLine]::AcceptLine()
 }
+Function CDCoding {Set-Location -Path ~/Coding}
+Set-Alias -Name Coding -Value CDCoding
